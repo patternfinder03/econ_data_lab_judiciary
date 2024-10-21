@@ -1,0 +1,1 @@
+selenium_path = 'C:\Users\theal\school\econ_data_lab_judiciary\chromedriver.exe'
