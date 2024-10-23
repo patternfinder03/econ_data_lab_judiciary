@@ -15,11 +15,11 @@ pip install selenium
 
 1. Clone the repository:
 git clone https://github.com/patternfinder03/econ_data_lab_judiciary.git
-cd yourrepo
+cd econ_data_lab_judiciary
 
 2. Create a new Anaconda environment:
-conda create --name myenv python=3.9
-conda activate myenv
+conda create --name judiciary python=3.9
+conda activate judiciary
 
 3. Install the required dependencies:
 pip install selenium
