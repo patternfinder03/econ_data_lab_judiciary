@@ -14,7 +14,7 @@ pip install selenium
 ### Setup Instructions
 
 1. Clone the repository:
-git clone https://github.com/yourusername/yourrepo.git
+git clone https://github.com/patternfinder03/econ_data_lab_judiciary.git
 cd yourrepo
 
 2. Create a new Anaconda environment:
