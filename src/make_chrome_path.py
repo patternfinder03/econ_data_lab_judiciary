@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import os
+import time
 
 # Function to create and store a new Chrome profile
 def create_chrome_profile(profile_name="new_profile"):

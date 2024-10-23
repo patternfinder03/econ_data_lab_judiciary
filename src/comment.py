@@ -30,7 +30,7 @@ def post_youtube_comment(video_url, comment_text, profile_dir):
         # Navigate to the YouTube video
         driver.get(video_url)
 
-        time.sleep(30)  # Ensure profile is fully loaded and any manual login is completed
+        time.sleep(15)  # Ensure profile is fully loaded and any manual login is completed
         
         # Wait until the video title is present to ensure the page has loaded
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'h1.title yt-formatted-string')))
@@ -68,6 +68,8 @@ def post_youtube_comment(video_url, comment_text, profile_dir):
             driver.execute_script("arguments[0].click();", comment_button)
         
         print("Comment posted successfully.")
+
+        
     
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -81,7 +83,7 @@ def post_youtube_comment(video_url, comment_text, profile_dir):
 
 # Example usage:
 if __name__ == "__main__":
-    video_url = "https://www.youtube.com/watch?v=UbZlYl92OGU"
+    video_url = "https://www.youtube.com/watch?v=LdZYeY1AuM4"
     comment_text = "Great video! Thanks for sharing."
     profile_dir = "C:/Users/theal/school/econ_data_lab_judiciary/src/chrome_profiles/mike_ross"  # Path to your Chrome profile
     
