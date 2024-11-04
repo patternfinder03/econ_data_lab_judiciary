@@ -1,7 +1,5 @@
 # Gmail Account Creation Automation Script - Version 1.1.0
 # Original script by Abdelhakim Khaouiti (khaouitiabdelhakim on GitHub)
-# Account Creation Automation Script - Version 1.1.0
-# Original script by Abdelhakim Khaouiti (khaouitiabdelhakim on GitHub)
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
@@ -12,9 +10,13 @@ import random
 import time
 from unidecode import unidecode
 
-# Chrome options
+# Chrome options with mobile emulation
+mobile_emulation = {
+    "deviceName": "Nexus 5"
+}
 chrome_options = ChromeOptions()
 chrome_options.add_argument("--disable-infobars")
+chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
 
 # WebDriver service
 service = ChromeService('chromedriver.exe')
@@ -57,9 +59,7 @@ random_number = random.randint(1000, 9999)
 your_first_name_normalized = unidecode(your_first_name).lower()
 your_last_name_normalized = unidecode(your_last_name).lower()
 
-
 your_username = f"{your_first_name_normalized}.{your_last_name_normalized}{random_number}"
-
 
 your_birthday = "02 3 1989" #dd m yyyy exp : 24 11 2003
 your_gender = "1" # 1:F 2:M 3:Not say 4:Custom
@@ -68,7 +68,6 @@ your_password = "econ_data_lab_2024"
 def save_account(email, password, file_name="generated_emails.txt"):
     with open(file_name, "a") as file:
         file.write(f"Gmail: {email}@gmail.com\nPassword: {password}\n\n")
-
 
 def fill_form(driver, username):
     try:
@@ -142,7 +141,6 @@ def fill_form(driver, username):
         except Exception as e:
             print("No skip option available:", e)
 
-
         time.sleep(5)
 
         # Agree to terms
@@ -160,7 +158,6 @@ def fill_form(driver, username):
 
     finally:
         driver.quit()
-
 
 for i in range(3):
     driver = webdriver.Chrome(options=chrome_options)
